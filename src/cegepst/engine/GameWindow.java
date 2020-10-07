@@ -35,7 +35,7 @@ public class GameWindow extends JFrame {
         super.add(panel);
 
         x = getRandom(0 + radius * 2, 800 - radius * 2);
-        x = getRandom(0 + radius * 2, 600 - radius * 2);
+        y = getRandom(0 + radius * 2, 600 - radius * 2);
         dx = getRandom(0, 1) == 0 ? 2 : -4;
         dy = getRandom(0, 1) == 0 ? 2 : -4;
 
