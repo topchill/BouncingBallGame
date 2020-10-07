@@ -38,7 +38,7 @@ public class GameWindow {
     }
 
     public void start() {
-        setVisible(true);
+        frame.setVisible(true);
         before = System.currentTimeMillis();
         while (playing) {
             bufferedImage = new BufferedImage(800, 600, BufferedImage.TYPE_INT_RGB);
