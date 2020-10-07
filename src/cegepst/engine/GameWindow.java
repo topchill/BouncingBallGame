@@ -3,12 +3,12 @@ package cegepst.engine;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Random;
 
-public class GameWindow extends JFrame {
+public class GameWindow {
 
     private static final int SLEEP = 25;
     private long before;
+    private JFrame frame;
     private JPanel panel;
     private Ball ball;
     private int score;
@@ -18,17 +18,18 @@ public class GameWindow extends JFrame {
 
 
     public GameWindow() {
-        setSize(800, 600);
-        setLocationRelativeTo(null);
-        setResizable(false);
-        setTitle("BouncingBallGame");
+        JFrame frame = new JFrame();
+        frame.setSize(800, 600);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setTitle("BouncingBallGame");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel = new JPanel();
         panel.setBackground(Color.darkGray);
         panel.setFocusable(true);
         panel.setDoubleBuffered(true);
-        super.add(panel);
+        frame.add(panel);
 
 
         ball = new Ball(25);
