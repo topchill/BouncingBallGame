@@ -3,6 +3,7 @@ package cegepst.engine;
 import java.awt.*;
 
 public class Buffer {
+
     private Graphics2D graphics;
 
     public Buffer(Graphics2D graphics) {

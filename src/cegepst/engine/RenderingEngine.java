@@ -5,10 +5,10 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class RenderingEngine {
+
     private JFrame frame;
     private JPanel panel;
     private BufferedImage bufferedImage;
-
 
     public RenderingEngine() {
         initializeFrame();
@@ -45,7 +45,6 @@ public class RenderingEngine {
         panel.setDoubleBuffered(true);
         frame.add(panel);
     }
-
 
     private void initializeFrame() {
         frame = new JFrame();

@@ -34,7 +34,7 @@ public abstract class Game {
             update();
             draw(renderingEngine.getRenderingBuffer());
             renderingEngine.renderBufferOnScreen();
-            gameTime.sleep();
+            gameTime.synchronize();
         }
         renderingEngine.stop();
     }

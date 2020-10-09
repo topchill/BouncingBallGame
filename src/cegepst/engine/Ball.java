@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.Random;
 
 public class Ball {
+
     private final int radius;
     private int x;
     private int y;
@@ -12,7 +13,6 @@ public class Ball {
 
     public Ball(int radius) {
         this.radius = radius;
-
         x = getRandom(0 + radius * 2, 800 - radius * 2);
         y = getRandom(0 + radius * 2, 600 - radius * 2);
         velocityX = getRandom(0, 1) == 0 ? 2 : -4;
@@ -50,17 +50,5 @@ public class Ball {
     private int getRandom(int min, int max) {
         Random random = new Random();
         return random.nextInt((max - min) + 1) + min;
-    }
-
-    public int getRadius() {
-        return radius;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
     }
 }
