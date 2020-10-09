@@ -48,8 +48,6 @@ public class Ball {
         return y <= radius || y >= 600 - radius;
     }
 
-
-
     private int getRandom(int min, int max) {
         Random random = new Random();
         return random.nextInt((max - min) + 1) + min;

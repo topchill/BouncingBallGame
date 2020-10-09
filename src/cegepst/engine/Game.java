@@ -2,45 +2,49 @@ package cegepst.engine;
 
 import java.awt.*;
 
-public class game {
+public abstract class Game {
 
     private static final int SLEEP = 25;
     private long before;
     private RenderingEngine renderingEngine;
-    private Ball ball;
-    private int score;
     private boolean playing = true;
 
-    public game() {
+    public Game() {
         renderingEngine = new RenderingEngine();
-        ball = new Ball(25);
+    }
+
+    public abstract void initialize();
+
+    public abstract void conclude();
+
+    public abstract void update();
+
+    public void draw(Graphics2D buffer) {
+
     }
 
     public void start() {
+        initialize();
+        run();
+        conclude();
+    }
+
+    public void stop() {
+        playing = false;
+    }
+
+    private void run() {
         renderingEngine.start();
         updateSyncTime();
-        while (playing) {
-
+        while(playing) {
             update();
-            drawOnBuffer(renderingEngine.getRenderingBuffer());
+            draw(renderingEngine.getRenderingBuffer());
             renderingEngine.renderBufferOnScreen();
             sleep();
         }
         renderingEngine.stop();
     }
 
-    private void update() {
-        ball.update();
-        if (ball.hasTouchedBound()) {
-            score += 10;
-        }
-    }
-
-    private void drawOnBuffer(Graphics2D buffer) {
-        ball.draw(buffer);
-        buffer.setPaint(Color.white);
-        buffer.drawString("score: " + score, 10, 20);
-    }
 
     private void sleep() {
         try {

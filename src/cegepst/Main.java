@@ -1,11 +1,11 @@
 package cegepst;
 
-import cegepst.engine.game;
+import cegepst.engine.BouncingBallGame;
 
 public class Main {
 
     public static void main(String[] args) {
-        game window = new game();
+        BouncingBallGame window = new BouncingBallGame();
         window.start();
     }
 }
